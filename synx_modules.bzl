@@ -63,3 +63,24 @@ register_synx_module(
     ],
     deps = ["ipclite"],
 )
+
+synx_v1_modules = create_module_registry([":synx_v1_headers"])
+
+synx_v1_modules.register(
+    name = "synx-driver",
+    path = "msm",
+    srcs = [
+        "synx_v1/synx.c",
+        "synx_v1/synx_util.c",
+        "synx_v1/synx_debugfs.c",
+    ],
+    deps = ["qcom_ipc_lite"],
+)
+
+synx_v1_modules.register(
+    name = "qcom_ipc_lite",
+    path = "msm",
+    srcs = [
+        "synx_v1/qcom_ipc_lite.c",
+    ],
+)

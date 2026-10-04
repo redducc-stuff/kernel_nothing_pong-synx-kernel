@@ -22,6 +22,19 @@ ddk_headers(
     ],
 )
 
+# synx v1 ABI for waipio userspace (libsynx) and EVA
+ddk_headers(
+    name = "synx_v1_headers",
+    hdrs = glob([
+        "include/uapi/synx_v1/media/*.h",
+        "msm/synx_v1/*.h",
+    ]),
+    includes = [
+        "include/uapi/synx_v1",
+        "msm/synx_v1",
+    ],
+)
+
 load(":pineapple.bzl", "define_pineapple")
 
 define_pineapple()

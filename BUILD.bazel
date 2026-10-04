@@ -53,3 +53,7 @@ define_seraph()
 load(":autogvm.bzl", "define_autogvm")
 
 define_autogvm()
+
+load(":waipio.bzl", "define_waipio")
+
+define_waipio()
